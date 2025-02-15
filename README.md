@@ -1,5 +1,3 @@
-
-
 # Bulk-add Japanese Phonetic Components
 ![Example](https://i.imgur.com/wrb2Edn.png)
 
@@ -8,8 +6,8 @@ This Anki add-on allows you to bulk-add phonetic components from kanji that are 
 
 For more information about phonetic components and their benefits, check out [this article on Tofugu](https://www.tofugu.com/).
 
-[Anki Add-on Link](https://ankiweb.net/shared/info/1459981298
-)
+[Anki Add-on Link](https://ankiweb.net/shared/info/1459981298)
+
 ## Installation
 
 ### Prerequisites
@@ -23,11 +21,37 @@ For more information about phonetic components and their benefits, check out [th
    - Go to `Tools -> Add-ons -> Get Add-ons`
    - Paste in the code `1362659377` and click **OK**
 3. Open the add-on configuration window:
-   - Set `dstFields` to the name of the field you created (`Phonetics` by default).
-   - Set `srcFields` to the field where kanji readings with furigana are stored.
+   - Edit the config by navigating to `Tools -> Add-ons -> Bulk-add Phonetics -> Config`.
+   - Set `source` to the field where kanji readings with furigana are stored (e.g., `Reading`).
+   - Set `destination` to the field where phonetic components should be stored (`Phonetics` by default).
+   - Example:
+     ```json
+     {
+       "source": ["Reading"],
+       "destination": ["Phonetics"]
+     }
+     ```
    - Save the configuration.
 4. Go to the **Card Browser**, click on **Edit**, and select **Bulk-add Phonetics**.
 5. To find cards where a phonetic component was recognized, search for `Phonetics:_*` in the Card Browser.
+6. Display this on the answer side of your notes, and you will quickly start to recognize phonetic patterns.
+
+### Example HTML & CSS:
+#### HTML:
+```html
+<div id="phonetics">
+  <a href="http://jisho.org/search/{{text:kanji:Phonetics}}%23kanji" rel="nofollow">
+    {{Phonetics}}
+  </a>
+</div>
+```
+
+#### CSS:
+```css
+#phonetics b {
+  color: #f0c674;
+}
+```
 
 ## Example Behavior
 - If your reading field contains `時[とき]`, it will **not** match the phonetic `寺 (じ) → 侍, 持, 時, 塒, 峙`, so nothing will be generated.
@@ -48,3 +72,4 @@ If you find my tools useful please consider supporting via Patreon. I have spent
 <a href="https://www.patreon.com/kanjieater" rel="nofollow"><img src="https://i.imgur.com/VCTLqLj.png"></a>
 
 If you can't contribute monetarily please consider following on a social platform, joining the discord & sharing a kind message or sharing this with a friend.
+
