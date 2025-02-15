@@ -6,7 +6,7 @@ This Anki add-on allows you to bulk-add phonetic components from kanji that are 
 
 For more information about phonetic components and their benefits, check out [this article on Tofugu](https://www.tofugu.com/).
 
-[Anki Add-on Link](https://ankiweb.net/shared/info/1459981298)
+[Anki Add-on Link](https://ankiweb.net/shared/info/1226813725)
 
 ## Installation
 
